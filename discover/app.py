@@ -89,7 +89,6 @@ def main():
                     for m in st.session_state.messages
                 ],
                 stream=True,
-                max_tokens=1000,
             ):
                 full_response += response.choices[0].delta.get("content", "")
                 message_placeholder.markdown(full_response + "▌")
